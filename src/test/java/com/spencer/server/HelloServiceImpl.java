@@ -1,7 +1,8 @@
 package com.spencer.server;
 
-import com.nettyrpc.test.client.HelloService;
-import com.nettyrpc.test.client.Person;
+
+import com.spencer.client.HelloService;
+import com.spencer.client.Person;
 
 @RpcService(HelloService.class)
 public class HelloServiceImpl implements HelloService {
