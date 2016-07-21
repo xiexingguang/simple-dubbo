@@ -1,10 +1,11 @@
 package com.spencer.app;
 
-import com.nettyrpc.client.RPCFuture;
-import com.nettyrpc.client.RpcClient;
-import com.nettyrpc.client.proxy.IAsyncObjectProxy;
-import com.nettyrpc.registry.ServiceDiscovery;
-import com.nettyrpc.test.client.HelloService;
+
+import com.spencer.client.HelloService;
+import com.spencer.client.RpcClient;
+import com.spencer.core.IAsyncObjectProxy;
+import com.spencer.core.RpcFutrue;
+import com.spencer.registry.ServiceDiscovery;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,7 +30,7 @@ public class BenchmarkAsync {
                     for (int i = 0; i < requestNum; i++) {
                         try {
                             IAsyncObjectProxy client = rpcClient.createAsync(HelloService.class);
-                            RPCFuture helloFuture = client.call("hello", Integer.toString(i));
+                            RpcFutrue helloFuture = client.call("hello", Integer.toString(i));
                             String result = (String) helloFuture.get(3000, TimeUnit.MILLISECONDS);
                             //System.out.println(result);
                             if (!result.equals("Hello! " + i))

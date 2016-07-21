@@ -1,12 +1,14 @@
 package com.spencer.app;
 
-import com.nettyrpc.client.AsyncRPCCallback;
-import com.nettyrpc.client.RPCFuture;
-import com.nettyrpc.client.RpcClient;
-import com.nettyrpc.client.proxy.IAsyncObjectProxy;
-import com.nettyrpc.registry.ServiceDiscovery;
-import com.nettyrpc.test.client.HelloPersonService;
-import com.nettyrpc.test.client.Person;
+
+
+import com.spencer.client.HelloPersonService;
+import com.spencer.client.Person;
+import com.spencer.client.RpcClient;
+import com.spencer.core.AsyncCallBack;
+import com.spencer.core.IAsyncObjectProxy;
+import com.spencer.core.RpcFutrue;
+import com.spencer.registry.ServiceDiscovery;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -23,8 +25,8 @@ public class HelloPersonCallbackTest {
         try {
             IAsyncObjectProxy client = rpcClient.createAsync(HelloPersonService.class);
             int num = 5;
-            RPCFuture helloPersonFuture = client.call("GetTestPerson", "xiaoming", num);
-            helloPersonFuture.addCallback(new AsyncRPCCallback() {
+            RpcFutrue helloPersonFuture = client.call("GetTestPerson", "xiaoming", num);
+            helloPersonFuture.addCallback(new AsyncCallBack() {
                 @Override
                 public void success(Object result) {
                     List<Person> persons = (List<Person>) result;
