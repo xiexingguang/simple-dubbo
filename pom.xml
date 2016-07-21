@@ -112,9 +112,12 @@
       <artifactId>jackson-core</artifactId>
       <version>2.7.2</version>
     </dependency>
-
-
-
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>RELEASE</version>
+      <scope>test</scope>
+    </dependency>
 
 
   </dependencies>

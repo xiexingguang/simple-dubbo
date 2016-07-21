@@ -1,5 +1,8 @@
 package com.spencer.client;
 
+import com.spencer.core.IAsyncObjectProxy;
+import com.spencer.proxy.AsyncObjectService;
+import com.spencer.proxy.ObjectProxy;
 import com.spencer.proxy.ServiceProxy;
 import com.spencer.registry.ServiceDiscovery;
 
@@ -34,13 +37,14 @@ public class RpcClient {
         return (T) Proxy.newProxyInstance(
                 interfaceClass.getClassLoader(),
                 new Class<?>[]{interfaceClass},
-                new ServiceProxy<>(interfaceClass)
+                new ObjectProxy<>(interfaceClass)
         );
     }
-/*
     public static <T> IAsyncObjectProxy createAsync(Class<T> interfaceClass) {
         return new ObjectProxy<T>(interfaceClass);
-    }*/
+    }
+
+
 
     public static void submit(Runnable task){
         threadPoolExecutor.submit(task);
