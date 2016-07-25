@@ -10,7 +10,7 @@ import com.spencer.registry.ServiceDiscovery;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by luxiaoxun on 2016/3/16.
+ *
  */
 public class BenchmarkAsync {
     public static void main(String[] args) throws InterruptedException {

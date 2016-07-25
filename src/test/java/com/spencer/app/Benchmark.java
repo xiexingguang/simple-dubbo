@@ -6,7 +6,7 @@ import com.spencer.client.RpcClient;
 import com.spencer.registry.ServiceDiscovery;
 
 /**
- * Created by luxiaoxun on 2016-03-11.
+ *
  */
 public class Benchmark {
 

@@ -5,14 +5,12 @@ import com.spencer.client.Person;
 import com.spencer.client.RpcClient;
 import com.spencer.core.IAsyncObjectProxy;
 import com.spencer.core.RpcFutrue;
-import com.spencer.proxy.AsyncObjectService;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -89,5 +87,10 @@ public class HelloServiceTest {
         for (int i = 0; i < num; ++i) {
             System.out.println(persons.get(i));
         }
+    }
+
+    @Test
+    public void testHello() {
+        System.out.println("hello world");
     }
 }

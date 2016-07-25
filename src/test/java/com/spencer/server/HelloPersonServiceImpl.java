@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by luxiaoxun on 2016-03-10.
+ *.
  */
 @RpcService(HelloPersonService.class)
 public class HelloPersonServiceImpl implements HelloPersonService {
